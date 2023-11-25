@@ -1,0 +1,88 @@
+<!-- partial:partials/_header.ejs -->
+    <%- include('partials/_header');%>
+<!-- partial -->
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.ejs -->
+    <%- include('partials/_navbar');%>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.ejs -->
+      <%- include('partials/_sidebar');%>
+      <!-- partial --> 
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Welcome User</h3>
+                  <h6 class="font-weight-normal mb-0">Learn more about the laptop store APIs to understand how they are used.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title mb-0">All APIs</p>
+                  <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                      <thead>
+                        <tr>
+                          <th>Parent</th>
+                          <th>Resource</th>
+                          <th>Methods</th>
+                          <th>Status</th>
+                        </tr>  
+                      </thead>
+                      <tbody>
+                        <% resources.forEach(item => { %>
+                          <tr>
+                            <% if (item.resource == "/"){ %>
+                              <td><a href="/home/<%= item.parent %>"><%= item.parent %></a></td>
+                            <% }else{ %>
+                              <td><a href="/home/<%= item.resource %>"><%= item.parent %></a></td>
+                            <% } %> %>
+                            <td><%= item.resource %></td>
+                            <td><%= item.methods %></td>
+                            <td class="font-weight-medium"><div class="badge badge-success">active</div></td>
+                          </tr>
+                        <% }); %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+
+        <!-- partial:partials/_footer.ejs -->
+        <%- include('partials/_footer'); %>
+        <!-- partial -->
+
+
+      </div>
+      <!-- main-panel ends -->
+    </div>   
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  
+  <!-- partial:partials/_scripts.ejs -->
+  <%- include('partials/_scripts'); %>
+  <!-- partial -->
+  <script src="/js/app.js"></script>
+</body>
+
+
+
+
+</html>
+

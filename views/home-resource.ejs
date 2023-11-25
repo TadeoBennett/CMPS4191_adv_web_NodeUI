@@ -1,0 +1,104 @@
+<!-- partial:partials/_header.ejs -->
+<%- include('partials/_header');%>
+<!-- partial -->
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.ejs -->
+    <%- include('partials/_navbar');%>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+      <!-- partial:partials/_sidebar.ejs -->
+      <%- include('partials/_sidebar');%>
+      <!-- partial --> 
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-2 mb-xl-0">
+                  <h3 class="font-weight-bold">Endpoint: <%= endPointName %></h3>
+                  <h6 class="font-weight-normal mb-0"><%= description %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title mb-3">HTTP METHOD: <span class="text-success">GET</span></p>
+                  <span class="bg-light p-2">
+                    http://127.0.0.1:8038/demo3/<%= endPointName %>
+                  </span>
+                  <h4 class="w-100 mt-5">Request Headers</h4>
+                  <div class="w-100 d-flex flex-wrap">
+                    <div class="row col-12">
+                      <div class="col-4">
+                        <h6>Content-Type: </h6>
+                      </div>
+                      <div class="col">
+                        <p>application/json</p>
+                      </div>
+                    </div>
+                    <div class="row col-12 overflow-auto">
+                      <div class="col-4">
+                        <h6>API-KEY: </h6>
+                      </div>
+                      <div class="col w-100 scrollable">
+                        <p class="">awt_[9H&lt;TzE5pIhW08tS(yF=Qo?{_0227029b5e7013d468d8155a47f1ec2b38f9f129aaadb9a668dd956dae443540 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="mt-4">
+                    <h6>Request Body: </h6>
+                    <textarea name="" id="" cols="30" rows="10" class="overflow-auto">
+                    </textarea>
+                  </div>
+                  <div class="mt-4">
+                    <label for="test-button" class="d-block">Testing</label>
+                    <button id="test-button" type="button" class="btn btn-primary">View Endpoint Results</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title mb-2">Sample Response</p>
+                  <textarea disabled name="" id="" cols="30" rows="20" class="w-100 overflow-scroll">
+                    <%- apiResult %>
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+
+        <!-- partial:partials/_footer.ejs -->
+        <%- include('partials/_footer'); %>
+        <!-- partial -->
+
+
+      </div>
+      <!-- main-panel ends -->
+    </div>   
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  
+  <!-- partial:partials/_scripts.ejs -->
+  <%- include('partials/_scripts'); %>
+  <!-- partial -->
+  <script src="/js/app.js"></script>
+</body>
+
+
+
+
+</html>
+
